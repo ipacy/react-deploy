@@ -15,4 +15,6 @@ RUN npm run build
 # CMD ["npm", "run", "start"]
 
 FROM nginx
+ # To expose port for the cloud (AWS, GCP)
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
